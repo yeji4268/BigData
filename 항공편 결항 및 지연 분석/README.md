@@ -20,16 +20,28 @@
 
 ## 2. 항공편 지연 결항 통계
 * 데이터 수집<br>
-    - 수집 : 데이터셋 다운로드
-    - 수집 범위 : 2017년 1월 ~ 2021년 12월
-    - 구분 : 국내선
-    - 인천공항 지연통계 출처 : [인천국제공항공사](https://www.airport.kr/co/ko/cpr/statisticOfDelay.do)
-    - 국내공항 지연통계 출처 : [한국공항공사](https://www.airport.co.kr/www/cms/frFlightStatsCon/delayStats.do?MENU_ID=1250#none)<br>
+    + 지연 통계
+        - 수집 : 데이터셋 다운로드
+        - 수집 범위 : 2017년 1월 ~ 2021년 12월
+        - 구분 : 국내선
+        - 인천공항 지연통계 출처 : [인천국제공항공사](https://www.airport.kr/co/ko/cpr/statisticOfDelay.do)
+        - 국내공항 지연통계 출처 : [한국공항공사](https://www.airport.co.kr/www/cms/frFlightStatsCon/delayStats.do?MENU_ID=1250#none)<br>
+    + 결항 통계
+        - 수집 : 데이터셋 다운로드
+        - 수집 범위 : 2017년 1월 ~ 2021년 12월
+        - 인천공항 결항통계 출처 : [인천국제공항공사](https://www.airport.kr/co/ko/cpr/statisticOfCanceled.do)
+        - 국내공항 결항통계 출처 : [한국공항공사](https://www.airport.co.kr/www/cms/frFlightStatsCon/canceledStats.do?MENU_ID=1250)
     *한국공항공사에서는 인천공항의 지연통계를 제공하고 있지 않음
+
 * 데이터 전처리 <br>
     - [지연 통계 : 데이터 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/delayStats_Preprocessing.ipynb)
+    - [결항 통계 : 데이터 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/cancelStats_Preprocessing.ipynb)
 * 데이터 시각화 & 분석 결과<br>
     + 지연 통계
         - 공항별 지연율 비교
         - 지연 요인 분석
         - [지연 통계 : 데이터 시각화 & 분석 결과](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/delayStats_Visulization.ipynb)
+    + 결항 통계
+        - 공항별 결항률 분석
+        - 결항 요인 분석
+        - [결항 통계 : 데이터 시각화 & 분석 결과](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/cancelStats_Visualization.ipynb)
