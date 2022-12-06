@@ -27,4 +27,8 @@
     - 국내공항 지연통계 출처 : [한국공항공사](https://www.airport.co.kr/www/cms/frFlightStatsCon/delayStats.do?MENU_ID=1250#none)<br>
     *한국공항공사에서는 인천공항의 지연통계를 제공하고 있지 않음
 * 데이터 전처리 <br>
-    - [지연 통계 : 데이터 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/delayStats.ipynb)
+    - [지연 통계 : 데이터 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/delayStats_Preprocessing.ipynb)
+* 데이터 시각화 & 분석 결과<br>
+    - 공항별 지연율 비교
+    - 지연 요인 분석
+    - [지연 통계 : 데이터 시각화 & 분석 결과](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%2C%20%EC%A7%80%EC%97%B0%20%ED%86%B5%EA%B3%84/delayStats_Visulization.ipynb)
