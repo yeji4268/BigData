@@ -20,3 +20,9 @@
 
 ## 2. 항공편 지연/결항 요인 분석
 * 데이터 수집<br>
+    - 수집 : 데이터셋 다운로드
+    - 수집 범위 : 2017년 1월 ~ 2021년 12월
+    - 구분 : 국내선
+    - 인천공항 지연통계 출처 : [인천국제공항공사](https://www.airport.kr/co/ko/cpr/statisticOfDelay.do)
+    - 국내공항 지연통계 출처 : [한국공항공사](https://www.airport.co.kr/www/cms/frFlightStatsCon/delayStats.do?MENU_ID=1250#none)<br>
+    *한국공항공사에서는 인천공항의 지연통계를 제공하고 있지 않음
