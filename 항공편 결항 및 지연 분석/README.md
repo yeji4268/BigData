@@ -53,3 +53,16 @@
         - 수집 범위 : 2017년 1월 ~ 2022년 2월
         - 출처 : [항공기상청](https://amo.kma.go.kr/weather/stat/stat-hourly.do)
         - [기상 데이터 수집](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/weather_Crawling.ipynb)
+    + 항공 스케줄 데이터
+        - 페이지 속성 : 동적 페이지 - selenium 사용
+        - 수집 범위: 2017년 1월 ~ 2022년 2월
+        - 출처 : [항공정보포털시스템](https://www.airportal.go.kr/index.jsp)
+        - [항공 스케줄 데이터 수집](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/schedule_Crawling.ipynb)
+        *소스코드 일부 첨부
+* 데이터 전처리
+    + 시간별 기상 데이터
+        - [기상 데이터 : 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/weather_Preprocessing.ipynb)
+    + 항공 스케줄 데이터
+        - [항공 스케줄 데이터 : 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/schedule_Preprocessing.ipynb)
+    + 기상 데이터, 항공 스케줄 데이터 병합
+        - [데이터 병합]()
