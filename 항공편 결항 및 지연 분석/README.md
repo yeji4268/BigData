@@ -82,19 +82,19 @@
         - [로지스틱 회귀](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/ML_Logistic.ipynb)
         - [SVM](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/ML_SVM.ipynb)
 ## 4. 항공편 지연 정비인력 상관관계 분석
-    * 데이터 수집 
-        - 항공 종사자 현황 데이터
-            + 페이지 속성 : 다운로드
-            + 수집 범위 : 2017년 1월 ~ 2021년 12월
-            + 출처 : [국토교통부](https://stat.molit.go.kr/portal/cate/statView.do?hRsId=523&hFormId=4630&hSelectId=4630&hPoint=00&hAppr=1&hDivEng=&oFileName=&rFileName=&midpath=&month_yn=N&sFormId=4630&sStart=2017&sEnd=2021&sStyleNum=1003&EXPORT=)
-        - 국내 항공사 지연/결항률 데이터
-            + 페이지 속성 : 다운로드
-            + 수집 범위 : 2017년 ~ 2021년
-            + 출처 : [항공정보포털](https://www.airportal.go.kr/life/consumer/Con03-02-03.html?date=20210625)
-    * 데이터 전처리 
-        - 항공 종사자 현황 데이터
-            + [항공 종사자 현항 데이터 : 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/mechanic_Preprocessing.ipynb)
-        - 항공 종사자 데이터, 항공사별 지연/통계 데이터 병합 & 전처리
-            + [데이터 병합 & 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/airlineData_Preprocessing.ipynb)
-    * 데이터 분석 & 시각화
-        - [통합 데이터 분석 & 시각화](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/airlineData_Visualization.ipynb)
+* 데이터 수집 
+    - 항공 종사자 현황 데이터
+        + 페이지 속성 : 다운로드
+        + 수집 범위 : 2017년 1월 ~ 2021년 12월
+        + 출처 : [국토교통부](https://stat.molit.go.kr/portal/cate/statView.do?hRsId=523&hFormId=4630&hSelectId=4630&hPoint=00&hAppr=1&hDivEng=&oFileName=&rFileName=&midpath=&month_yn=N&sFormId=4630&sStart=2017&sEnd=2021&sStyleNum=1003&EXPORT=)
+    - 국내 항공사 지연/결항률 데이터
+        + 페이지 속성 : 다운로드
+        + 수집 범위 : 2017년 ~ 2021년
+        + 출처 : [항공정보포털](https://www.airportal.go.kr/life/consumer/Con03-02-03.html?date=20210625)
+* 데이터 전처리 
+    - 항공 종사자 현황 데이터
+        + [항공 종사자 현항 데이터 : 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/mechanic_Preprocessing.ipynb)
+    - 항공 종사자 데이터, 항공사별 지연/통계 데이터 병합 & 전처리
+        + [데이터 병합 & 전처리](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/airlineData_Preprocessing.ipynb)
+* 데이터 분석 & 시각화
+    - [통합 데이터 분석 & 시각화](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EC%A0%95%EB%B9%84%EC%9D%B8%EB%A0%A5%20%EB%B6%84%EC%84%9D/airlineData_Visualization.ipynb)
