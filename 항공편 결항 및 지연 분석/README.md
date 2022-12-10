@@ -16,7 +16,7 @@
 * 목적 <br>
     항공편 이용의 변수 중 하나인 지연과 결항, 현재의 항공기 지연, 결항은 '통보' 수준. 이로 인해 이용객에게 가는 피해는 불가피. 항공기 지연 및 결항에 대한 피해를 최소화하는 것이 목적
 * 기대효과<br>
-    상관관계 분석, 더 나아가서 결항 예측까지 함으로써 이용객의 행동 결정에 도움을 줄 수 있을 것으로 기대
+    수집한 데이터에 대한 분석과 상관관계 분석, 더 나아가서 결항 예측까지 함으로써 이용객의 행동 결정에 도움을 줄 수 있을 것으로 기대
 
 ## 2. 항공편 지연 결항 통계
 * 데이터 수집<br>
@@ -67,7 +67,6 @@
     + 기상 데이터, 항공 스케줄 데이터 병합
         - [데이터 병합](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/data_Merging.ipynb)
 * 데이터 분석 & 시각화
-    + 기상 데이터 분석
     + 항공 스케줄 분석
         - 지연 분석
             * 월별 지연 분석
@@ -77,3 +76,8 @@
             * 시간별 결항 분석
         - [항공 스케줄 : 지연, 결항 분석](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/schedule_Visualization.ipynb)
     + 병합 데이터 분석
+        - [병합 데이터 분석](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/data_Visualization.ipynb)
+    + 머신러닝을 이용한 데이터 분석
+        - [의사결정나무](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/ML_Decision.ipynb)
+        - [로지스틱 회귀](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/ML_Logistic.ipynb)
+        - [SVM](https://github.com/yeji4268/BigData/blob/main/%ED%95%AD%EA%B3%B5%ED%8E%B8%20%EA%B2%B0%ED%95%AD%20%EB%B0%8F%20%EC%A7%80%EC%97%B0%20%EB%B6%84%EC%84%9D/%EA%B8%B0%EC%83%81%20%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%20%EB%B6%84%EC%84%9D/ML_SVM.ipynb)
