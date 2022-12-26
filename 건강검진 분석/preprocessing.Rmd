@@ -1,7 +1,8 @@
 ---
 title: "데이터 탐색 & 전처리"
-output: github_document
+output: html_notebook
 ---
+** 이 문서는 R markdown으로 작성되었습니다. 
 
 ### 데이터 불러오기
 
