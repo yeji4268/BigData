@@ -12,6 +12,5 @@
 
 ## 2. 건강검진정보 분석
 * 진행중
-* 사용 언어 : R
-* 데이터 적재 : 구글 BigQuery
+* 사용 언어 : 
 * [건강검진 분석](https://github.com/yeji4268/BigData/tree/main/%EA%B1%B4%EA%B0%95%EA%B2%80%EC%A7%84%20%EB%B6%84%EC%84%9D)
