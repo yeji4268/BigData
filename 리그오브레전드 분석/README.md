@@ -1,4 +1,4 @@
-# [리그오브레전드 사용자 데이터 분석 & 승패 예측 모델 개발]
+# [리그오브레전드 데이터 분석 및 승패 예측 모델 개발]
 ---
 ## 목차
 [1. 프로젝트 개요](#1-분석-개요)<br>
@@ -36,8 +36,8 @@
         ![API 사용 순서](image/image-1.png)
         - API 링크: [Riot API](https://developer.riotgames.com/apis)
         - 데이터 수집 과정
-            - [데이터 수집: 플레이어 데이터]()
-            - [데이터 수집: 게임 데이터]()
+            - [데이터 수집: 플레이어 데이터](https://github.com/yeji4268/BigData/blob/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Collection/Data%20Collection_Summoner.ipynb)
+            - [데이터 수집: 게임 데이터](https://github.com/yeji4268/BigData/blob/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Collection/Data%20Collection_Game%20Data.ipynb)
 
 ## 3. 데이터 전처리
 * 데이터 전처리
@@ -51,11 +51,11 @@
             - 오브젝트 관련 파생변수 생성: baron, dragon, inhibitor, herald, tower
             - 팀 지표 관련 파생변수 생성: 전체 처치 수, 전체 죽음 횟수, 전체 가한 데미지, 전체 미니언 처치 수
         - 인게임 데이터: 게임 단위 데이터 분할 - 게임 단위(1건) --> 개인 단위(10건)으로 분할
-    + [데이터 전처리]()
+    + [데이터 전처리](https://github.com/yeji4268/BigData/tree/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Preprocessing)
 
 ## 4. 데이터 시각화
 * interactive plot: ipywidgets 사용으로 UI 포함 plot
-    - [데이터 시각화: interactive plot]()
+    - [데이터 시각화: interactive plot](https://github.com/yeji4268/BigData/tree/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Visualization)
 * 데이터 시각화: R ggplot 패키지를 사용한 시각화
     - [데이터 시각화]()
 
@@ -64,5 +64,5 @@
     - 개인 데이터: 14개의 변수 + 1개의 타겟 변수(0: 패배, 1: 승리)
     - 팀 데이터: 15개의 변수 + 1개의 타겟 변수(0: 패배, 1: 승리)
 * 성능 평가 기준: 정확도(Accuracy), F1-Score
-* [승패 예측 모델 개발]()
+* [승패 예측 모델 개발](https://github.com/yeji4268/BigData/blob/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Modeling/Modeling%26Factor%20Analysis.ipynb)
 
