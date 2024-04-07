@@ -1,0 +1,383 @@
+---
+title: '13'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+data <- read.csv(file = "C:/R/data/final.csv")
+data
+```
+
+```{r}
+# 사용하지 않는 인덱스 컬럼 삭제 
+data <- data[, -1]
+```
+
+```{r}
+data <- data[data$individualPosition != 'Invalid',]
+data
+```
+
+## EDA : 탐색적 데이터 분석
+
+### 1. 승패 - 게임 시간, 티어 관계
+
+```{r}
+data$tier <- factor(data$tier, levels = c("IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM"))
+```
+
+```{r}
+ggplot(data) + geom_boxplot(aes(x=win, y=duration), outlier.colour = "red") + theme_bw() + theme(text = element_text(size = 8, face = "bold"), axis.text.x = element_text(angle = 90)) + facet_wrap(~tier, nrow = 1)
+```
+
+```{r}
+ggplot(data) + geom_boxplot(aes(x=tier, y=duration), outlier.colour = "red") + theme_bw() + theme(text = element_text(size = 8, face = "bold"), axis.text.x = element_text(angle = 90)) + facet_wrap(~win, nrow = 1)
+```
+
+```{r}
+data$win <- factor(data$win)
+```
+
+```{r}
+data %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean(duration)) %>%
+    ggplot() +
+    geom_point(aes(x = tier, y = Mean, col = win)) + 
+    geom_line(aes(x = tier, y = Mean, col = win, group = win)) + 
+    theme_bw() + 
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 15, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+### 2. 티어별 게임 시간 분포
+
+```{r}
+ggplot(data) +
+  geom_histogram(aes(x = duration, y = ..density..), 
+                 fill = 'royalblue',col ='black',alpha = 0.4) +
+  geom_density(aes(x = duration),col = 'red', size = 0.8) +
+  xlab("duration") + ylab("Density") +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
+  theme_bw() +
+  theme(text = element_text(size = 8, face = "bold")) + 
+  facet_wrap(~tier)
+```
+
+### 3. 승패 - 티어, 미니언 처치 수
+
+```{r}
+ggplot(data) + geom_boxplot(aes(x=win, y=totalMinionsKilled), outlier.colour = "red") + theme_bw() + theme(text = element_text(size = 8, face = "bold"), axis.text.x = element_text(angle = 90)) + facet_wrap(~tier, nrow = 1)
+```
+
+```{r}
+data %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean(totalMinionsKilled)) %>%
+    ggplot() +
+    geom_point(aes(x = tier, y = Mean, col = win)) + 
+    geom_line(aes(x = tier, y = Mean, col = win, group = win)) + 
+    theme_bw() +
+    xlab("tier") + ylab("Minions Killed")+
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+data %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean(totalMinionsKilled)) %>%
+    ggplot() +
+    geom_point(aes(x = tier, y = Mean, col = win)) + 
+    theme_bw() +
+    xlab("tier") + ylab("Minions Killed")+
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+data %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean(totalMinionsKilled)) %>%
+    ggplot(aes(x = tier, y=Mean, group = win))+
+  geom_col(aes(fill=win), position = "dodge")+
+  scale_y_continuous(expand = c(0,0), limits = c(0,123), 
+                           breaks = seq(0,123, by = 3))+
+  coord_cartesian(ylim = c(80, 123))+
+    xlab("tier") + ylab("Minions Killed")+
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 10, face = "bold"))
+```
+
+### 3.2. 승패 - 포지션, 미니언 처치 수
+
+```{r}
+ggplot(data) + geom_boxplot(aes(x=individualPosition, y=totalMinionsKilled), outlier.colour = "red") + theme_bw() + theme(text = element_text(size = 8, face = "bold"), axis.text.x = element_text(angle = 90)) + facet_wrap(~win, nrow = 1)
+```
+
+```{r}
+data %>%
+    group_by(individualPosition, win) %>%
+    summarise(Mean = mean(totalMinionsKilled)) %>%
+    ggplot() +
+    geom_point(aes(x = individualPosition, y = Mean, col = win)) + 
+    geom_line(aes(x = individualPosition, y = Mean, col = win, group = win)) + 
+    theme_bw() +
+    xlab("individualPosition") + ylab("Minions Killed")+
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+data %>%
+    group_by(individualPosition, win) %>%
+    summarise(Mean = mean(totalMinionsKilled)) %>%
+    ggplot(aes(x = individualPosition, y=Mean, group = win))+
+  geom_col(aes(fill=win), position = "dodge")
+    + theme_bw() +
+    xlab("tier") + ylab("Minions Killed")+
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+### 4. 포지션별 시야점수 분포
+
+```{r}
+ggplot(data) + geom_boxplot(aes(x=individualPosition, y=visionScore), outlier.colour = "red") + theme_bw() + theme(text = element_text(size = 8, face = "bold"), axis.text.x = element_text(angle = 90)) + facet_wrap(~tier)
+```
+
+```{r}
+data %>%
+    group_by(individualPosition, tier) %>%
+    summarise(Mean = mean(visionScore)) %>%
+    ggplot() +
+    geom_point(aes(x = individualPosition, y = Mean, col = tier)) + 
+    geom_line(aes(x = individualPosition, y = Mean, col = tier, group = tier)) + 
+    theme_bw() + 
+  xlab("Individual Position") + ylab("Vision Score")+
+  theme(text = element_text(size = 8, face = "bold"))+
+    scale_y_continuous(breaks = seq(0, 60, 5))
+```
+
+### 5. 포지션별 가한 데미지 - 승패
+
+```{r}
+data$win <- factor(data$win)
+```
+
+```{r}
+data %>%
+    group_by(individualPosition, win) %>%
+    summarise(Mean = mean(totalDamageDealtToChampions)) %>%
+    ggplot() +
+    geom_point(aes(x = individualPosition, y = Mean, col = win)) + 
+    geom_line(aes(x = individualPosition, y = Mean, col = win, group = win)) + 
+    theme_bw() + 
+   xlab("Individual Position") + ylab("Total Damage") +
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+data %>%
+    group_by(individualPosition, win) %>%
+    summarise(Mean = mean(totalDamageDealtToChampions)) %>%
+      ggplot(aes(x = individualPosition, y=Mean, group = win))+
+      geom_col(aes(fill=win), position = "dodge")+
+      xlab("Position") + ylab("Total Damage")+
+      scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+      theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+## 포지션별 로지스틱 회귀 분석
+
+```{r}
+data_top <- data[data$individualPosition == 'TOP',]
+data_middle <- data[data$individualPosition == 'MIDDLE',]
+data_jungle <- data[data$individualPosition == 'JUNGLE',]
+data_bottom <- data[data$individualPosition == 'BOTTOM',]
+data_support <- data[data$individualPosition == 'UTILITY',]
+
+```
+
+### TOP
+
+```{r}
+result_top <- glm(win ~ duration + kills + assists + deaths + longestTimeSpentLiving + totalDamageDealtToChampions +  totalDamageTaken + totalHeal + totalMinionsKilled + totalTimeSpentDead + visionScore, family = binomial, data = data_top)
+```
+
+```{r}
+summary(result_top)
+```
+
+### 어떤 포지션의 죽음이 승패에 가장 많은 영향을 미칠까?
+
+사용변수 : 플레이어 죽음 횟수(deaths), 죽어있던 시간(totalTimeSpentDead)
+
+```{r}
+# 데이터 
+res_data <- read.csv("C:/R/data/res.csv")
+```
+
+```{r}
+res_data$position <- factor(res_data$position)
+```
+
+```{r}
+ggplot(data = res_data, aes(x = position, y = death))+
+  geom_bar(stat="identity", width = 0.5)+
+  geom_point(data = res_data, aes(x = position, y = deadTime * 100), color = 'red')+theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+ggplot(data = res_data, aes(x = position, y = death+deadTime))+
+  geom_bar(stat="identity", width = 0.5)+theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+높은 순위에 있는 포지션은 죽음 횟수를 줄일 수 있는 선택을 하는 것이 좋다.
+
+예) 방어력을 높일 수 있는 아이템이나 룬 장착
+
+### 어떤 포지션의 공격력이 승패에 많은 영향을 미칠까?
+
+```{r}
+res_2 <- read.csv("C:/R/data/res_2.csv")
+res_2
+```
+
+```{r}
+ggplot(data = res_2, aes(x = position, y = dealt + kills + assists + minionKilled))+
+  geom_bar(stat="identity", width = 0.5)+
+  scale_y_continuous(limits = c(0, 0.65), 
+                     breaks = seq(0,10, by = 0.2))+theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))+ylab("Attack Score")
+```
+
+분석에서 높은 순위를 차지한 포지션들이 공격력 상승 관련 아이템이나 룬을 사용하는 것이 팀에 유리할 것으로 예상
+
+### 어떤 포지션의 시야 관리, 힐이 승패에 유리할까?
+
+사용변수 : 총 힐량, 시야 점수
+
+```{r}
+res_3 <- read.csv("C:/R/data/res_3.csv")
+```
+
+```{r}
+ggplot(data = res_3, aes(x = position, y = heal))+
+  geom_bar(stat="identity", width = 0.5)+
+  scale_y_continuous(limits = c(0, 0.02), 
+                     breaks = seq(0,10, by = 0.01))+theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))+ylab("support Score")
+```
+
+```{r}
+team <- read.csv(file = "C:/R/data/final_data(2).csv")
+team
+```
+
+```{r}
+team$win <- factor(team$win)
+
+```
+
+```{r}
+team$tier <- factor(team$tier, levels = c("IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM"))
+```
+
+```{r}
+res <- glm(win ~ firstBaron + baron + firstDragon + dragon + firstInhibitor + inhibitor + firstRiftHerald + riftHerald + firstTower + tower + kills + deaths + totalDamageDealtToChampions + totalMinionsKilled, family = binomial, data = team)
+```
+
+```{r}
+summary(res)
+```
+
+```{r}
+team %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean((baron + dragon + riftHerald))) %>%
+    ggplot() +
+    geom_point(aes(x = tier, y = Mean, col = win)) + 
+    geom_line(aes(x = tier, y = Mean, col = win, group = win)) + 
+    theme_bw() + 
+   xlab("tier") + ylab("Object Kills") +
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
+
+```{r}
+team %>%
+    group_by(tier, win) %>%
+    summarise(Mean = mean(baron + dragon + riftHerald)) %>%
+      ggplot(aes(x = Mean, y=tier, group = win))+
+      geom_col(aes(fill=win), position = "dodge", width = 0.7)+
+      xlab("Object Kills") + ylab("Tier")+
+      scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+      theme(text = element_text(size = 8, face = "bold"))
+```
+
+```{r}
+team %>%
+    group_by(win) %>%
+    ggplot() +
+    geom_point(aes(x = tier, y = Mean, col = win)) + 
+    geom_line(aes(x = tier, y = Mean, col = win, group = win)) + 
+    theme_bw() + 
+   xlab("tier") + ylab("Object Kills") +
+    scale_fill_manual(values = c("#365384", "#A8CBDC"))+
+    theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+
+```
+
+```{r}
+par(mfrow = c(1, 3))
+```
+
+```{r}
+s1 <- ggplot(team,aes(x=firstDragon,fill=win))+
+  geom_bar(position='stack', width = 0.5)+ 
+  theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 0), legend.position = "none") +   scale_x_discrete(limits=c("True", "False"))
+
+s2 <- ggplot(team, aes(x=firstBaron, fill=win))+
+  geom_bar(position='stack', width = 0.5)+ 
+  theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 0), legend.position = "none")+   scale_x_discrete(limits=c("True", "False"))
+s3 <- ggplot(team,
+       aes(x=firstRiftHerald,
+           fill=win))+
+  geom_bar(position='stack', width = 0.5)+ 
+  theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 0), legend.position = c(2, 0.7), legend.title = element_text(size = 7), legend.text = element_text(size = 6)) + scale_color_discrete(breaks=c("True","False"))+   scale_x_discrete(limits=c("True", "False"))
+```
+
+```{r}
+
+grid.arrange(s1, s2, s3, ncol = 3, nrow = 1)
+```
+
+```{r}
+`ggplot(team,
+       aes(x=firstDragon,
+           fill=win))+
+  geom_bar(position='stack', width = 0.3)+
++ theme(text = element_text(size = 8, face = "bold"),
+              axis.text.x = element_text(angle = 90))
+```
