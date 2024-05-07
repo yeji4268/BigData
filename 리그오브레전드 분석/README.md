@@ -57,7 +57,7 @@
 * interactive plot: ipywidgets 사용으로 UI 포함 plot
     - [데이터 시각화: interactive plot](https://github.com/yeji4268/BigData/tree/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Visualization)
 * 데이터 시각화: R ggplot 패키지를 사용한 시각화
-    - [데이터 시각화]()
+    - [데이터 시각화](https://github.com/yeji4268/BigData/blob/main/%EB%A6%AC%EA%B7%B8%EC%98%A4%EB%B8%8C%EB%A0%88%EC%A0%84%EB%93%9C%20%EB%B6%84%EC%84%9D/Data%20Visualization/Data%20Visualization.Rmd)
 
 ## 5. 승패 예측 모델 개발 
 * 데이터 구성
